@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+<div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Pranay</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Calculator</a></li>
+            <li><a href="#">Something</a></li>
+            <li><a href="#">Something Else</a></li>
+        </ul>
+    </div>
+</div>
+</nav>
+<form name="calculator">
+<div class="container calculator text-center">
+    <div class="row display">
+        <div class="panel panel-default">
+            <input class="panel-body" type="text" name="input" readonly>
+        </div>
+    </div>
+    <div class="row keys">
+        <div class="row rows">
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-warning clear" name="clear" id="clear" OnClick="calculator.input.value = ''">C</button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" name="divide" OnClick="calculator.input.value += '/'"><span class="operator">/</span></button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default">@</button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-danger" name="back" onclick="truncate(this)"><span class="glyphicon glyphicon-chevron-left"> </span> </button></div>
+        </div>
+        <div class="row rows">
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" value="7" name="seven" OnClick="calculator.input.value += '7'">7</button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" value="8" name="eight" OnClick="calculator.input.value += '8'">8</button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" value="9" name="nine" OnClick="calculator.input.value += '9'">9</button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" name="minus" id="minus" OnClick="calculator.input.value += '-'"> - </button></div>
+        </div>
+        <div class="row rows">
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" value="4" name="four" OnClick="calculator.input.value += '4'">4</button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" value="5" name="five" OnClick="calculator.input.value += '5'">5</button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" value="6" name="six" OnClick="calculator.input.value += '6'">6</button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" name="plus" id="plus" OnClick="calculator.input.value += '+'"><span class="operator">+</span> </button></div>
+        </div>
+        <div class="row rows">
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" value="1" name="one" OnClick="calculator.input.value += '1'">1</button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" value="2" name="two" OnClick="calculator.input.value += '2'">2</button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" value="3" name="three" OnClick="calculator.input.value += '3'">3</button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" name="multiply" id="multiply" OnClick="calculator.input.value += '*'"><span class="operator">x</span></button> </div>
+        </div>
+        <div class="row rows">
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" name="dot" id="dot" value="." OnClick="dotClicked(), calculator.input.value += '.'">.</button></div>
+            <div class="col-lg-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default" name="zero" OnClick="calculator.input.value += '0'">0</button></div>
+            <div class="col-lg-6 col-sm-6 col-xs-3"><button type="button" class="btn btn-success big-btn" name="execute"  OnClick="calculator.input.value = eval(calculator.input.value)">=</button></div>
+        </div>
+    </div>
+</div>
+</form>
+</body>
+</html>
